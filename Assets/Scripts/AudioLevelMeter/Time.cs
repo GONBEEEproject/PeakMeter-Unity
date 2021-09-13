@@ -11,7 +11,7 @@ namespace ouchi
         }
 
         public Time CastTime(Ratio newunit)
-            => new Time((int)(value / unit * newunit).ToDouble(), newunit);
+            => new Time((int)(value / (newunit / unit)).ToDouble(), newunit);
         public static Time operator+(Time a, Time b)
         {
             Ratio min = a.unit.CompareTo(b.unit) < 0 ? a.unit : b.unit;
