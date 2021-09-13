@@ -5,12 +5,12 @@ namespace ouchi
 {
     public class PeakMeter : ILevelMeter
     {
-        public PeakMeter(int samplerate)
+        public PeakMeter(int samplerate, int releaserate = -24)
         {
             sampleRate = samplerate;
             peakTime_ = new Time(1, audioClockUnit);
             reference = 1f;
-            releaseRate = -24;
+            releaseRate = releaserate;
             linearPeak_ = 0;
             maxAcceptableSampleCount = 1024;
         }
