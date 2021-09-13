@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-
 namespace ouchi
 {
     public class PeakMeter : ILevelMeter
@@ -79,7 +76,7 @@ namespace ouchi
         /// </summary>
         public float reference;
         public int sampleRate { 
-            private get { return samplerate_; }
+            get { return samplerate_; }
             set { samplerate_ = value; } }
 
         private float linearPeak_;

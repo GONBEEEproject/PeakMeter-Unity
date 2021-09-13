@@ -7,7 +7,8 @@ public class AudioLevelMeterTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ale = new ouchi.AudioLevelMeter(new ouchi.PeakMeter(AudioSettings.outputSampleRate), channel);
+        //ale = new ouchi.AudioLevelMeter(new ouchi.PeakMeter(AudioSettings.outputSampleRate), channel);
+        ale = new ouchi.AudioLevelMeter(new ouchi.RMSMeter(AudioSettings.outputSampleRate, new ouchi.Time(300, ouchi.Time.units.milliseconds)), 0);
         transform.localScale = new Vector3(1, 0.125f, 1);
     }
 

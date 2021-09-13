@@ -9,8 +9,7 @@ namespace ouchi
         public AudioLevelMeter(ILevelMeter meter, int channel, int bufferSize = 1024)
         {
             meter_ = meter;
-            meter.maxAcceptableSampleCount = bufferSize;
-            buffer_ = new float[1024];
+            buffer_ = new float[bufferSize];
             channel_ = channel;
         }
 
