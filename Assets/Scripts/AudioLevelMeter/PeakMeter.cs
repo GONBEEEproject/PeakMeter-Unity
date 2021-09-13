@@ -17,7 +17,7 @@ namespace ouchi
         /// <summary>
         /// メーターに波形データを入力し，メーターが指す値を更新する．
         /// </summary>
-        /// <param name="samples">samples[0]が最新の波形標本になるような配列</param>
+        /// <param name="samples">samplesの最後の要素が最新の波形標本になるような配列</param>
         /// <param name="deltaTime">前回の入力から経過した時間</param>
         public void Feed(float[] samples, Time deltaTime)
         {
@@ -40,7 +40,7 @@ namespace ouchi
         /// <summary>
         /// メーターに波形データを入力し，メーターが指す値を更新する．
         /// </summary>
-        /// <param name="samples">samples[0]が最新の波形標本になるような配列</param>
+        /// <param name="samples">samplesの最後の要素が最新の波形標本になるような配列</param>
         /// <param name="deltaTime">前回の入力から経過した時間[秒]</param>
         public void Feed(float[] samples, float deltaTimeSec)
         {
@@ -49,7 +49,7 @@ namespace ouchi
         /// <summary>
         /// メーターに波形データを入力し，メーターが指す値を更新する．samplesの標本数に対応する分だけ時間が経ったものとする．
         /// </summary>
-        /// <param name="samples">samples[0]が最新の波形標本になるような配列</param>
+        /// <param name="samples">samplesの最後の要素が最新の波形標本になるような配列</param>
         public void Feed(float[] samples)
         {
             Feed(samples, new Time(samples.Length, audioClockUnit));
