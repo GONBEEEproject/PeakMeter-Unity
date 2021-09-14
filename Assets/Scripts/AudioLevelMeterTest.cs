@@ -4,19 +4,28 @@ using UnityEngine;
 
 public class AudioLevelMeterTest : MonoBehaviour
 {
-    // Start is called before the first frame update
+    ouchi.ILevelMeter[] meters;    // Start is called before the first frame update
     void Start()
     {
+        meters = new ouchi.ILevelMeter[] {
+            new ouchi.RMSMeter(AudioSettings.outputSampleRate, new ouchi.Time(300, ouchi.Time.units.milliseconds)),
+            new ouchi.PeakMeter(AudioSettings.outputSampleRate)
+        };
+
         //ale = new ouchi.AudioLevelMeter(new ouchi.PeakMeter(AudioSettings.outputSampleRate), channel);
-        ale = new ouchi.AudioLevelMeter(new ouchi.RMSMeter(AudioSettings.outputSampleRate, new ouchi.Time(300, ouchi.Time.units.milliseconds)), 0);
+        ale = new ouchi.AudioLevelMeter(meters[meter], channel);
         transform.localScale = new Vector3(1, 0.125f, 1);
+        if(meter == 1)
+        {
+            gameObject.GetComponent<Renderer>().material.color = Color.red;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         db = ale.GetLevel_dB();
-        transform.localPosition = new Vector3(1, (-mindb + System.Math.Max(db, mindb)) / -mindb * 5, 1f);
+        transform.localPosition = new Vector3(1, (-mindb + System.Math.Max(db, mindb)) / -mindb * 10, 1f);
         Debug.Log("Update AudioLevelMeter");
     }
     ouchi.AudioLevelMeter ale;
@@ -27,4 +36,6 @@ public class AudioLevelMeterTest : MonoBehaviour
     int channel;
     [SerializeField]
     float mindb = -60;
+    [SerializeField]
+    int meter;
 }
