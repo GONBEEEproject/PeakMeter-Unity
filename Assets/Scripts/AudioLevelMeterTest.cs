@@ -15,14 +15,16 @@ public class AudioLevelMeterTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        db_ = ale.GetLevel_dB();
-        transform.localPosition = new Vector3(1, 96 + System.Math.Max(db_, -96.0f), 1f) / 16;
+        db = ale.GetLevel_dB();
+        transform.localPosition = new Vector3(1, (-mindb + System.Math.Max(db, mindb)) / -mindb * 5, 1f);
         Debug.Log("Update AudioLevelMeter");
     }
     ouchi.AudioLevelMeter ale;
 
     [SerializeField]
-    float db_;
+    float db;
     [SerializeField]
     int channel;
+    [SerializeField]
+    float mindb = -60;
 }

@@ -16,14 +16,15 @@ namespace ouchi
         public void Feed(float[] samples, Time deltaTime)
         {
             deltaTime = deltaTime.CastTime(audioClockUnit);
+            deltaTime.value = System.Math.Min(maxAcceptableSampleCount, deltaTime.value);
             // samples‚Ì‚¤‚¿”jŠü‚·‚é”
             int discard = System.Math.Max(0, samples.Length - deltaTime.value);
             float sum = 0;
-            for(int i = discard; i < buffer_.size; ++i)
+            for(int i = System.Math.Max(0, buffer_.size - (maxAcceptableSampleCount - deltaTime.value)); i < buffer_.size; ++i)
             {
                 sum += buffer_[i];
             }
-            for(int i = discard; i < System.Math.Min(samples.Length, maxAcceptableSampleCount); ++i)
+            for(int i = discard; i < samples.Length; ++i)
             {
                 float sq = samples[i] * samples[i];
                 buffer_.Add(sq);
