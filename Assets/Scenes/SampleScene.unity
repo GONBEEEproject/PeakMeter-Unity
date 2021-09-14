@@ -150,8 +150,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1407372291}
   - {fileID: 1224490891}
+  - {fileID: 1407372291}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -816,7 +816,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 6740a5c0d8cc1764b9a446d77dc5cfd9, type: 2}
-  m_audioClip: {fileID: 8300000, guid: facd2b0f2817ef448a7e02e04040a894, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0e4288e9717c0fb49a8b334467de9b6e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -948,7 +948,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 73804663}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1224490892
 MonoBehaviour:
@@ -965,7 +965,7 @@ MonoBehaviour:
   db: 0
   channel: 0
   mindb: -60
-  meter: 1
+  meter: 0
 --- !u!65 &1224490893
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1063,7 +1063,7 @@ MonoBehaviour:
   db: 0
   channel: 0
   mindb: -80
-  meter: 0
+  meter: 1
 --- !u!65 &1407372288
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1138,7 +1138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 73804663}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1643809421
 GameObject:
