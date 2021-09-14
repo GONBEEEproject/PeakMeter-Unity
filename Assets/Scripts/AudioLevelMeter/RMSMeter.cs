@@ -23,7 +23,7 @@ namespace ouchi
             {
                 sum += buffer_[i];
             }
-            for(int i = discard; i < samples.Length; ++i)
+            for(int i = discard; i < System.Math.Min(samples.Length, maxAcceptableSampleCount); ++i)
             {
                 float sq = samples[i] * samples[i];
                 buffer_.Add(sq);

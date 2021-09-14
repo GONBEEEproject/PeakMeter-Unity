@@ -2,7 +2,7 @@ namespace ouchi
 {
     public class PeakMeter : ILevelMeter
     {
-        public PeakMeter(int samplerate, int releaserate = -24)
+        public PeakMeter(int samplerate, float releaserate = -24)
         {
             sampleRate = samplerate;
             peakTime_ = new Time(1, audioClockUnit);
