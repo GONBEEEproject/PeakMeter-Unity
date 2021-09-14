@@ -750,10 +750,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 387233594}
   m_HandleRect: {fileID: 649768706}
   m_Direction: 0
-  m_MinValue: -74
-  m_MaxValue: 0
+  m_MinValue: -35
+  m_MaxValue: -3
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: -5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -784,7 +784,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 6740a5c0d8cc1764b9a446d77dc5cfd9, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0e4288e9717c0fb49a8b334467de9b6e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4b7b711b0eb357d40acd5b9499955b8c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -942,6 +942,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

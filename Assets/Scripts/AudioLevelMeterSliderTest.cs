@@ -21,6 +21,7 @@ public class AudioLevelMeterSliderTest : MonoBehaviour
     void Start()
     {
         ale = new AudioLevelMeter(new PeakMeter(AudioSettings.outputSampleRate, -74), channel);
+        //ale = new AudioLevelMeter(new ouchi.RMSMeter(AudioSettings.outputSampleRate), 0);
     }
 
     // Update is called once per frame
